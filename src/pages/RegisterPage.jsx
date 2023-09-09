@@ -1,6 +1,9 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { registerUser } from 'redux/operations';
 
 const RegisterPage = () => {
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -9,7 +12,13 @@ const RegisterPage = () => {
     const email = event.currentTarget.elements.userEmail.value;
     const password = event.currentTarget.elements.userPassword.value;
 
-    console.log(name,email,password)
+    const formData = {
+      name, 
+      email, 
+      password,
+    };
+
+    dispatch(registerUser(formData));
   };
   return (
     <div>
@@ -39,7 +48,7 @@ const RegisterPage = () => {
               type="password" 
               name='userPassword' 
               placeholder='Enter your password...'
-              minLength={4} 
+              minLength={7} 
               required
             />
           </label>

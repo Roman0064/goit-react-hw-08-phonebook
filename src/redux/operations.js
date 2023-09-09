@@ -1,7 +1,47 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://64f386cfedfa0459f6c6a54b.mockapi.io';
+
+export const instance = axios.create({
+  baseURL: 'https://connections-api.herokuapp.com/'
+});
+
+export const token = {
+  set: (token) => {
+    instance.defaults.headers['Authorization'] = token;
+  },
+  clear: () => {
+    instance.defaults.headers['Authorization'] = '';
+  },
+}; 
+
+export const registerUser = createAsyncThunk(
+  'auth/registerUser',
+  async (formData, thunkAPI) => {
+    try { 
+      const { data } = await instance.post('users/signup', formData);
+      console.log(data);
+      
+      return data;
+    }catch (error ){
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const loginUser = createAsyncThunk(
+  'auth/loginUser',
+  async (formData, thunkAPI) => {
+    try { 
+      const { data } = await instance.post('users/login', formData);
+      console.log(data);
+      
+      return data;
+    }catch (error ){
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 
 export const fetchAllContacts = createAsyncThunk(
   "contacts/fetchAll",
