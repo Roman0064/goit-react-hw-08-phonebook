@@ -1,7 +1,9 @@
-import HomePage from 'pages/HomePage';
-import Contacts from 'pages/Contacts';
-import LoginPage from 'pages/LoginPage';
-import RegisterPage from 'pages/RegisterPage';
+import HomePage from 'pages/HomePage/HomePage';
+import Contacts from 'pages/Contacts/Contacts';
+import LoginPage from 'pages/LoginPage/LoginPage';
+import RegisterPage from 'pages/RegisterPage/RegisterPage';
+import { RestrictedRoute } from 'components/RestrictedRoute/RestrictedRoute';
+import { PrivateRoute } from 'components/PrivateRoute/PrivateRoute';
 
 export const HOME_PAGE_ROUTE = '/';
 export const CONTACTS_PAGE_ROUTE = '/contacts';
@@ -15,15 +17,24 @@ export const appRoutes = [
     },
     {
       path: CONTACTS_PAGE_ROUTE,
-      element: <Contacts/>,
+      element: 
+        <PrivateRoute>
+          <Contacts/>
+        </PrivateRoute>,
     },
     {
       path: LOGIN_PAGE_ROUTE,
-      element: <LoginPage/>,
+      element: 
+        <RestrictedRoute redirectTo={CONTACTS_PAGE_ROUTE}>
+          <LoginPage/>
+        </RestrictedRoute>,
     },
     {
       path: REGISTER_PAGE_ROUTE,
-      element: <RegisterPage/>,
+      element: 
+        <RestrictedRoute redirectTo={CONTACTS_PAGE_ROUTE}>
+          <RegisterPage/>
+        </RestrictedRoute>,
     },
   
   ];

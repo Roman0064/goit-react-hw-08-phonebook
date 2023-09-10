@@ -1,12 +1,23 @@
 .wrapper{
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 400px;
+    min-height: 300px;
+    box-shadow: 1px 1px 20px #DD8511;
+    border-radius: 6px;
+    margin-top: 20px;
 }
 .list{
+    display: flex;
+    align-items: center;
     list-style: none;
     font-weight: 500;
+    max-width: 350px;
+    width: 100%;
+    background-color: #DD8511;
 }
 .btn{
     border-radius: 10px;

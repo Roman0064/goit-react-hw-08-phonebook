@@ -1,15 +1,14 @@
-.contact_wrapper{
+.login_wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
 }
 .title{
     color: rgb(208, 214, 219);
     margin-top: 100px;
 }
-.contact_form{
+.login_form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,9 +37,9 @@
     background-color: #DD8511;
     color: black;
     padding: 5px;
-    max-width: 100px;
+    max-width: 70px;
     width: 100%;
+    margin-top: 40px;
     border-radius: 5px;
     font-weight: 600;
-    margin-top: 20px;
 }

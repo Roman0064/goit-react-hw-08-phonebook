@@ -1,7 +1,7 @@
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { CONTACTS_PAGE_ROUTE, HOME_PAGE_ROUTE, LOGIN_PAGE_ROUTE, REGISTER_PAGE_ROUTE, appRoutes } from 'constants/routes';
 import css from './App.module.css';
-import NotFound from 'pages/NotFound';
+import NotFound from 'pages/NotFound/NotFound';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserAuthentication } from 'redux/authReducer';
 import { LogOut } from 'components/userMenu';
@@ -18,9 +18,9 @@ const App = () => {
 
     return (
       <div className={css.wrapper}>
-        <header>
-          <nav>
-            <NavLink to={HOME_PAGE_ROUTE}>Home</NavLink>
+        <header className={css.header}>
+          <nav className={css.nav}>
+            <NavLink to={HOME_PAGE_ROUTE} className={css.home}>Home</NavLink>
             
             {authenticated ? (
               <>
