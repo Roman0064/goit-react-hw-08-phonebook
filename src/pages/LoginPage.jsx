@@ -32,7 +32,7 @@ const LoginPage = () => {
             />
           </label>
           <label>
-            <span>password:</span>
+            <span>Password:</span>
             <input 
               type="password" 
               name='userPassword' 

@@ -20,7 +20,7 @@ const App = () => {
       <div className={css.wrapper}>
         <header>
           <nav>
-            <NavLink to={HOME_PAGE_ROUTE}></NavLink>
+            <NavLink to={HOME_PAGE_ROUTE}>Home</NavLink>
             
             {authenticated ? (
               <>
