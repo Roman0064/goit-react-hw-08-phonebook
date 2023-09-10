@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loginUser, registerUser } from './operations'
+import { loginUser, logoutUser, refreshUser, registerUser } from './operations'
 
 const initialState = {
   userData: null,
-  isLoading: false,
   token: null,
+  isLoading: false,
   authenticated: false,
   error: null,
 };
@@ -46,6 +46,42 @@ const authSlice = createSlice ({
         state.isLoading = false;
         state.error = action.payload;
       })
-})
+//------------------LOGOUT-------------------------
+      .addCase(logoutUser.pending, (state, action) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(logoutUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.authenticated = false;
+        state.userData = null;
+        state.token = null;
+      })
+      .addCase(logoutUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+//------------------REFRESH  USER-------------------------
+      .addCase(refreshUser.pending, (state, action) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(refreshUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.authenticated = true;
+        state.userData = action.payload;
+      })
+      .addCase(refreshUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      ,
+});
+
+export const selectUserAuthentication = state => state.auth.authenticated;
+export const selectUserData = state => state.auth.userData;
+export const selectUserIsLoading = state => state.auth.isLoading;
+export const selectUserError = state => state.auth.error;
+export const selectUserToken = state => state.auth.token;
 
 export const authReducer = authSlice.reducer;
