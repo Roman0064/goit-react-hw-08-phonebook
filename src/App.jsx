@@ -20,17 +20,21 @@ const App = () => {
       <div className={css.wrapper}>
         <header className={css.header}>
           <nav className={css.nav}>
-            <NavLink to={HOME_PAGE_ROUTE} className={css.home}>Home</NavLink>
+            <NavLink to={HOME_PAGE_ROUTE} className={({ isActive }) =>
+              isActive ? css.active : ''}>Home</NavLink>
             
             {authenticated ? (
               <>
-                <NavLink to={CONTACTS_PAGE_ROUTE}>Contacts</NavLink>
+                <NavLink to={CONTACTS_PAGE_ROUTE} className={({ isActive }) =>
+              isActive ? css.active : ''}>Contacts</NavLink>
                 <LogOut/>
               </>
             ):(
               <>
-                <NavLink to={LOGIN_PAGE_ROUTE}>Login</NavLink>
-                <NavLink to={REGISTER_PAGE_ROUTE}>Register</NavLink>
+                <NavLink to={LOGIN_PAGE_ROUTE} className={({ isActive }) =>
+              isActive ? css.active : ''}>Login</NavLink>
+                <NavLink to={REGISTER_PAGE_ROUTE} className={({ isActive }) =>
+              isActive ? css.active : ''}>Register</NavLink>
               </>
             )}
           </nav>

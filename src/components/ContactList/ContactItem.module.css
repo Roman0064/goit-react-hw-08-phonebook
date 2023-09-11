@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper_item{
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
     max-height: 300px;
     box-shadow: 1px 1px 20px #DD8511;
     border-radius: 6px;
-    margin-top: 20px;
+    margin-top: 40px;
     padding-top: 20px;
     padding-bottom: 20px;
     overflow-y: scroll;

@@ -5,6 +5,7 @@ import css from './ContactItem.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllContacts } from 'redux/operations';
 import { selectContacts, selectError, selectFilter, selectIsLoading } from 'redux/selectors';
+import Loader from 'components/Loader';
 
 const ContactList = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const ContactList = () => {
     );
   };
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loader/>;
   }
   
   if (error) {
@@ -33,7 +34,7 @@ const ContactList = () => {
   const filteredContacts = getFilteredContacts();
 
   return (
-    <ul className={css.wrapper}>
+    <ul className={css.wrapper_item}>
       {filteredContacts.map((contact) => (
         <ContactItem
           key={contact.id}
