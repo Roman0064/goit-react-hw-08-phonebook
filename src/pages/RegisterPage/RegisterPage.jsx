@@ -1,4 +1,4 @@
-import React from 'react'
+import React  from 'react'
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/operations';
 import css from './RegisterPage.module.css'

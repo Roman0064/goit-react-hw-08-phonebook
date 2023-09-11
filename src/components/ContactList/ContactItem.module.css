@@ -55,3 +55,8 @@
     flex-direction: column;
     align-items: center;
 }
+.no_contact{
+    font-weight: 500;
+    font-size: 18px;
+    color: rgb(208, 214, 219);
+}

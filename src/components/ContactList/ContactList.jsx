@@ -33,16 +33,24 @@ const ContactList = () => {
 
   const filteredContacts = getFilteredContacts();
 
-  return (
-    <ul className={css.wrapper_item}>
-      {filteredContacts.map((contact) => (
-        <ContactItem
-          key={contact.id}
-          contact={contact}
-        />
-      ))}
-    </ul>
-  );
+  if(filteredContacts.length > 0) {
+    return (
+      <ul className={css.wrapper_item}>
+        {filteredContacts.map((contact) => (
+          <ContactItem
+            key={contact.id}
+            contact={contact}
+          />
+        ))}
+      </ul>
+    );
+  }else{
+    return (
+      <ul className={css.wrapper_item}>
+        <span className={css.no_contact}>No contacts, add a contact</span>
+      </ul>
+    );
+  }
 };
 
 ContactList.propTypes = {

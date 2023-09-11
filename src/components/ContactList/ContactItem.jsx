@@ -3,7 +3,7 @@ import css from './ContactItem.module.css'
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 
-const ContactItem = ({ contact, onDelete }) => {
+const ContactItem = ({ contact }) => {
   const { id, name, number } = contact;
   const dispatch = useDispatch();
 
