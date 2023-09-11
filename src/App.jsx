@@ -4,7 +4,7 @@ import css from './App.module.css';
 import NotFound from 'pages/NotFound/NotFound';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserAuthentication } from 'redux/authReducer';
-import { LogOut } from 'components/userMenu';
+import { LogOut } from 'components/UserMenu/UserMenu';
 import { useEffect } from 'react';
 import { refreshUser } from 'redux/operations';
 

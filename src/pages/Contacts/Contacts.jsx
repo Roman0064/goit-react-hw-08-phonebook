@@ -2,12 +2,13 @@ import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
 import React from 'react'
+import css from '../../components/ContactList/ContactItem.module.css'
 
 const Contacts = () => {
   return (
-    <div>
+    <div className={css.contact}>
        <ContactForm/>
-        <h2>Contacts</h2>
+        <h2 className={css.title}>Contacts</h2>
         <Filter/>
         <ContactList/>
     </div>
