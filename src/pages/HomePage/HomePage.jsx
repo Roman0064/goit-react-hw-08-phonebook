@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './HomePage.module.css';
-import myImage from 'phonebook.png'; // Замініть шлях на вірний
+import myImage from 'phonebook.png';
 
 const HomePage = () => {
   return (

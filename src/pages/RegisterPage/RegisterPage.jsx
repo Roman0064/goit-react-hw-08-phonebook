@@ -4,6 +4,9 @@ import { registerUser } from 'redux/operations';
 import css from './RegisterPage.module.css'
 import Notiflix from 'notiflix';
 import { selectError } from 'redux/selectors';
+Notiflix.Notify.init({
+  position: 'center-top',
+  });
 
 
 const RegisterPage = () => {

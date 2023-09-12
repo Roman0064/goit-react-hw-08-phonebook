@@ -4,6 +4,10 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 import Notiflix from 'notiflix';
 
+Notiflix.Notify.init({
+  position: 'center-top',
+  });
+
 const ContactItem = ({ contact }) => {
   const { id, name, number } = contact;
   const dispatch = useDispatch();

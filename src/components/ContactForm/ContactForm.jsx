@@ -7,6 +7,10 @@ import { addContact } from 'redux/operations';
 import { selectContacts } from 'redux/selectors';
 import Notiflix from 'notiflix';
 
+Notiflix.Notify.init({
+  position: 'center-top',
+  });
+
 const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
