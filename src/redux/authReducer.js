@@ -8,7 +8,6 @@ const initialState = {
   authenticated: false,
   error: null,
 };
-
 const authSlice = createSlice ({
     name: 'auth',
     initialState,
@@ -73,7 +72,7 @@ const authSlice = createSlice ({
       })
       .addCase(refreshUser.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload;
+        state.error = null;
       })
       ,
 });

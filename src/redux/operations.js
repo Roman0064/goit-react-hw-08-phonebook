@@ -71,7 +71,7 @@ export const refreshUser = createAsyncThunk(
       const { data } = await instance.get('/users/current');
 
       return data;
-    }catch (error ){
+    }catch ( error ){
       return thunkAPI.rejectWithValue(error.message);
     }
   }

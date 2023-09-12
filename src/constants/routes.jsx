@@ -1,9 +1,12 @@
-import HomePage from 'pages/HomePage/HomePage';
-import Contacts from 'pages/Contacts/Contacts';
-import LoginPage from 'pages/LoginPage/LoginPage';
-import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import { RestrictedRoute } from 'components/RestrictedRoute/RestrictedRoute';
 import { PrivateRoute } from 'components/PrivateRoute/PrivateRoute';
+
+import { lazy } from 'react';
+
+const HomePage = lazy(() => import('pages/HomePage/HomePage'));
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
+const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 
 export const HOME_PAGE_ROUTE = '/';
 export const CONTACTS_PAGE_ROUTE = '/contacts';

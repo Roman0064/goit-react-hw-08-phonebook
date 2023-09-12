@@ -1,10 +1,17 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from 'redux/operations';
 import css from './LoginPage.module.css'
+import { selectError } from 'redux/selectors';
+import Notiflix from 'notiflix';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
+  const error = useSelector(selectError);
+
+  if(error){
+    Notiflix.Notify.warning('Incorrect email or password, please check and try again')
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();

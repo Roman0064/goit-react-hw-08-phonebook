@@ -1,11 +1,19 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from 'redux/operations';
 import css from './RegisterPage.module.css'
+import Notiflix from 'notiflix';
+import { selectError } from 'redux/selectors';
 
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
+  const error = useSelector(selectError);
+  console.log(error)
+
+  if(error){
+    Notiflix.Notify.warning('A user with this email already exists')
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();

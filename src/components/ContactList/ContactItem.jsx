@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import css from './ContactItem.module.css'
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
+import Notiflix from 'notiflix';
 
 const ContactItem = ({ contact }) => {
   const { id, name, number } = contact;
@@ -9,6 +10,7 @@ const ContactItem = ({ contact }) => {
 
   const handleDeleteContact = () => {
     dispatch(deleteContact(id));
+    Notiflix.Notify.success(`Contact ${name} successfully deleted`)
   };
   
     return (

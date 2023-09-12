@@ -5,6 +5,7 @@ import css from './ContactForm.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
 import { selectContacts } from 'redux/selectors';
+import Notiflix from 'notiflix';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -37,8 +38,10 @@ const ContactForm = () => {
     const nameExists = contacts.some((contact) => contact.name.toLowerCase() === name.toLowerCase());
 
     if (nameExists) {
-      alert(`${name} is already in contacts.`);
+      Notiflix.Notify.warning(`${name} is already in contacts!!!`);
       return;
+    }else{
+      Notiflix.Notify.success(`${name} successfully added to contacts :)`);
     }
 
     const newContact = {
