@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/666.fecbc6a9.chunk.css","mappings":"AAAA,yBAGI,aAAyB,CADzB,cAAe,CADf,eAAgB,CAGhB,gBACJ,CACA,sBACI,aACJ","sources":["pages/NotFound/NotFound.module.css"],"sourcesContent":[".wrapper{\n    font-weight: 600;\n    font-size: 28px;\n    color: rgb(208, 214, 219);\n    margin-top: 100px;\n}\n.back{\n    color: #DD8511;;\n}"],"names":[],"sourceRoot":""}
