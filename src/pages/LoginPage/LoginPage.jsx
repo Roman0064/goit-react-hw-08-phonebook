@@ -5,6 +5,10 @@ import css from './LoginPage.module.css'
 import { selectError } from 'redux/selectors';
 import Notiflix from 'notiflix';
 
+Notiflix.Notify.init({
+  position: 'center-top',
+  });
+
 const LoginPage = () => {
   const dispatch = useDispatch();
   const error = useSelector(selectError);
